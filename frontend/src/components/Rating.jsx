@@ -29,5 +29,5 @@ export const Rating = ({ value, text, className = "" }) => {
 };
 
 Rating.propTypes = {
-  value: PropTypes.number.isRequired,
+  value: PropTypes.number,
 };
