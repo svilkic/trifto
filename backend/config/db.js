@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import { exit } from "process";
 
 const connectDB = async () => {
   try {
@@ -11,7 +10,7 @@ const connectDB = async () => {
     console.log(`MongoDB Connected ${conn.connection.host}`);
   } catch (error) {
     console.log(`DB Error: ${error.message}`);
-    exit(1);
+    process.exit(1);
   }
 };
 

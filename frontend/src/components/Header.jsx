@@ -20,28 +20,28 @@ const Header = (props) => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">
-              <Nav.Link>
+              <div className="nav-link">
                 <NavLink className="text-light mr-3" to="/cart">
                   <i className="fas fa-shopping-cart" />
                   Cart
                 </NavLink>
-              </Nav.Link>
+              </div>
               {userInfo ? (
                 <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
-                  <NavDropdown.Item>
+                  <div className="dropdown-item">
                     <NavLink to="/profile">Profile</NavLink>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item onClick={logoutHandler}>
+                  </div>
+                  <div className="dropdown-item" onClick={logoutHandler}>
                     Logout
-                  </NavDropdown.Item>
+                  </div>
                 </NavDropdown>
               ) : (
-                <Nav.Link>
+                <div className="nav-link">
                   <NavLink className="text-light mr-3" to="/login">
                     <i className="fas fa-user" />
                     Sign In
                   </NavLink>
-                </Nav.Link>
+                </div>
               )}
             </Nav>
           </Navbar.Collapse>
