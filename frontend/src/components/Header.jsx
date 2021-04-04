@@ -5,8 +5,9 @@ import { NavLink } from "react-router-dom";
 import { logout } from "../actions/userActions";
 
 const Header = (props) => {
-  const { userInfo } = useSelector((state) => state.userLogin);
   const dispatch = useDispatch();
+  const { userInfo } = useSelector((state) => state.userLogin);
+
   const logoutHandler = () => {
     dispatch(logout());
   };
@@ -26,6 +27,23 @@ const Header = (props) => {
                   Cart
                 </NavLink>
               </div>
+
+              {/* Admin drop-down menu */}
+              {userInfo && userInfo.isAdmin && (
+                <NavDropdown title="admin" id="admin-menu">
+                  <div className="dropdown-item">
+                    <NavLink to="/admin/users">User List</NavLink>
+                  </div>
+                  <div className="dropdown-item">
+                    <NavLink to="/admin/products">Products</NavLink>
+                  </div>
+                  <div className="dropdown-item">
+                    <NavLink to="/admin/orders">Orders</NavLink>
+                  </div>
+                </NavDropdown>
+              )}
+
+              {/* User drop-down menu */}
               {userInfo ? (
                 <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
                   <div className="dropdown-item">
