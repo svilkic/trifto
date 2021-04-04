@@ -68,7 +68,7 @@ const ProfileScreen = ({ location, history }) => {
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="Enter Name"
+              placeholder="Enter Names"
             ></Form.Control>
           </Form.Group>
 
