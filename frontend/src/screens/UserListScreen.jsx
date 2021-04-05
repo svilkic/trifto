@@ -20,7 +20,7 @@ function UserListScreen({ history }) {
     } else {
       history.push("/login");
     }
-  }, [dispatch, history, successDelete]);
+  }, [dispatch, history, successDelete, userInfo]);
 
   const handleDelete = (userID) => {
     if (window.confirm("Are you sure?")) dispatch(deleteUser(userID));
