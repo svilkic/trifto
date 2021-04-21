@@ -36,9 +36,17 @@ function ProductListScreen({ history, match }) {
     if (!userInfo.isAdmin) {
       history.push("/login");
     }
-    if (successCreate) history.push(`/admin/product/${createdProduct._id}`);
+    if (successCreate)
+      history.push(`/admin/product/${createdProduct._id}/edit`);
     else dispatch(listProducts());
-  }, [dispatch, history, userInfo, successDelete, successCreate]);
+  }, [
+    dispatch,
+    history,
+    userInfo,
+    successDelete,
+    successCreate,
+    createdProduct,
+  ]);
 
   const handleDelete = (productID) => {
     if (window.confirm("Are you sure?")) {
